@@ -7,7 +7,7 @@
       <div class="absolute top-20 right-20 w-32 h-32 bg-green-400/15 rounded-full blur-2xl"></div>
       <div class="absolute bottom-20 left-1/4 w-24 h-24 bg-blue-400/20 rounded-full blur-xl"></div>
       
-      <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="mt-20 max-w-4xl mx-auto text-center relative z-10">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1E204B] mb-6 font-poppins">
           <span class="text-[#EE585B]">Testimonials</span>
         </h1>
@@ -167,35 +167,29 @@
       </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="py-16 md:py-20 px-6 md:px-24 bg-white">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#1E204B] mb-6 font-poppins">
-          Join Our Satisfied Customers
-        </h2>
-        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Experience the same reliable, fast internet service that our customers love. 
-          Get your free consultation today and see why ALNET is the trusted choice.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <router-link
-            to="/contact"
-            class="inline-flex items-center justify-center px-8 py-4 bg-[#EE585B] text-white font-semibold rounded-full hover:bg-[#d04748] transition duration-300 transform hover:scale-105"
-          >
-            Get Started Today
-            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </router-link>
-          <router-link
-            to="/services"
-            class="inline-flex items-center justify-center px-8 py-4 border-2 border-[#1E204B] text-[#1E204B] font-semibold rounded-full hover:bg-[#1E204B] hover:text-white transition duration-300"
-          >
-            View Our Plans
-          </router-link>
-        </div>
-      </div>
-    </section>
+   <!-- Animated Join Our Satisfied Customers CTA -->
+<section class="py-16 md:py-20 px-6 md:px-24 bg-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 font-poppins animate-bounce animate-gradient bg-gradient-to-r from-[#EE585B] via-[#1E204B] to-[#2A2D5F] bg-clip-text text-transparent">
+      Join Our Satisfied Customers
+    </h2>
+    <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+      Experience the same reliable, fast internet service that our customers love. 
+      Get your free consultation today and see why ALNET is the trusted choice.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <router-link
+        to="/contact"
+        class="inline-flex items-center justify-center px-8 py-4 bg-[#EE585B] text-white font-semibold rounded-full transform hover:scale-110 hover:bg-[#ff8989] transition duration-300 shadow-lg animate-pulse"
+      >
+        Get Started Today
+        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </router-link>
+    </div>
+  </div>
+</section>
   </DefaultLayout>
 </template>
 
@@ -244,6 +238,39 @@ export default {
 /* Add smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-move 4s linear infinite alternate;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-bounce {
+  animation: bounce 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+.animate-pulse {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+body {
+  padding-bottom: 90px;  /* Adjust the padding as per your requirement */
+}
+
+/* Additional padding for sections */
+section {
+  padding-bottom: 90px; /* Ensure the sections have padding */
 }
 
 /* Fade in animation */

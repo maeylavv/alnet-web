@@ -1,94 +1,15 @@
 <template>
-  <div class="min-h-screen bg-[#F1F5FB] font-poppins">
     <!-- Navbar -->
-  <header class="fixed top-4 left-0 w-full z-50 px-4 md:px-6 bg-transparent">
-  <div
-    class="max-w-7xl mx-auto backdrop-blur-md bg-white/50 rounded-full shadow-lg px-4 py-3 flex items-center justify-between font-poppins relative"
-  >
-    <!-- Logo -->
-    <div class="flex-shrink-0">
-      <img src="/images/alnet.logo.jpeg" alt="ALNET Logo" class="h-8 md:h-10" />
-    </div>
-
-    <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-x-5 text-[#202345] text-sm md:text-base font-medium">
-      <router-link to="/" class="hover:text-red-500">Home</router-link>
-      <router-link to="/about" class="hover:text-red-500">About Us</router-link>
-      <router-link to="/services" class="hover:text-red-500">Services</router-link>
-      <router-link to="/faq" class="hover:text-red-500">FAQ</router-link>
-      <div class="relative group">
-        <button class="hover:text-red-500 text-sm md:text-base">Others</button>
-        <div
-          class="absolute hidden group-hover:block bg-white shadow-md mt-2 rounded p-2 text-xs md:text-sm"
-        >
-          <router-link to="/team" class="block px-3 py-1 hover:bg-gray-100">Our Team</router-link>
-          <router-link to="/testimonials" class="block px-3 py-1 hover:bg-gray-100">Testimonials</router-link>
-        </div>
-      </div>
-    </nav>
-
-
-    <!-- CTA Button Desktop -->
-        <router-link
-      to="/contact"
-      class="border border-[#F04748] text-[#F04748] font-medium px-4 py-2 rounded-full hover:bg-red-100 transition text-base md:text-lg"
-    >
-      Contact Us!
-    </router-link>
-
-    <!-- Hamburger Icon -->
-    <button
-      @click="toggleMenu"
-      class="md:hidden text-[#EE585B] text-2xl focus:outline-none"
-      aria-label="Toggle menu"
-    >
-      ☰
-    </button>
-
-    <!-- Mobile Menu -->
-    <div
-      v-show="menuOpen"
-      class="md:hidden absolute backdrop-blur-md bg-white/50 top-full left-0 w-full mt-3 rounded-xl shadow-lg p-4 z-50 font-semibold text-sm text-[#202345]"
-    >
-      <nav class="flex flex-col space-y-3">
-        <a href="#" @click="closeMenu" class="hover:text-red-500">Home</a>
-        <a href="#" @click="closeMenu" class="hover:text-red-500">About Us</a>
-        <a href="#" @click="closeMenu" class="hover:text-red-500">Services</a>
-        <a href="#" @click="closeMenu" class="hover:text-red-500">FAQ</a>
-        <a href="#" @click="closeMenu" class="hover:text-red-500">Our Team</a>
-        <a href="#" @click="closeMenu" class="hover:text-red-500">Testimonials</a>
-      </nav>
-      <a
-      href="#contact"
-      class="hidden md:inline-block px-6 py-3 rounded-full font-semibold text-white relative overflow-hidden transition-transform duration-300 hover:scale-105"
-      style="background: linear-gradient(90deg, #EE585B, #FF7A7A, #EE585B); background-size: 200% 200%; animation: gradientMove 3s ease infinite;"
-      @mouseenter="hovering = true"
-      @mouseleave="hovering = false"
-    >
-      Contact Us!
-      <span
-        class="absolute inset-0 bg-gradient-to-r from-red-600 via-red-400 to-red-600 opacity-0 transition-opacity duration-300 pointer-events-none rounded-full"
-        :class="{'opacity-30': hovering}"
-      ></span>
-    </a>
-    </div>
-  </div>
-</header>
-
-
-    <!-- Spacer div to prevent content behind fixed navbar -->
-    <div class="h-[84px] md:h-[84px]"></div>
-
+  <DefaultLayout>
+  <div class="min-h-screen bg-[#F1F5FB] font-poppins">
     <!-- Hero Section -->
     <section
       class="grid grid-cols-1 md:grid-cols-5 px-6 md:px-24 pt-20 pb-10 items-center gap-12"
     >
-      <div class="md:col-span-2 md:pl-8">
-        <h1
-          class="text-6xl md:text-6xl font-bold text-[#202345] leading-tight mb-6"
-        >
-          Your Trusted Partner for<br />Fast, Reliable Internet
-        </h1>
+       <div class="mt-20 md:col-span-2 md:pl-8"> 
+    <h1 class="text-6xl md:text-6xl font-bold text-[#202345] leading-tight mb-6">
+      Your Trusted Partner for<br />Fast, Reliable Internet
+    </h1>
         <p class="text-lg text-gray-600 mb-8">
           Connecting homes and businesses with the speed they deserve.
         </p>
@@ -99,7 +20,7 @@
         Choose Package
       </button>
       </div>
-      <div class="md:col-span-3 flex justify-center">
+      <div class="mt-20 md:col-span-3 flex justify-center mb-8">
         <img
           src="/images/Hero Image.svg"
           alt="Speed Graphic"
@@ -108,110 +29,112 @@
       </div>
     </section>
 
-    <!-- Additional Content Section -->
-    <section class="px-6 md:px-24 pt-10 pb-20 relative">
+    <!-- Service Areas Section -->
+    <section class="px-6 md:px-24 pt-10 pb-20 relative bg-[#F1F5FB]">
   <div class="max-w-6xl mx-auto">
     <div class="text-center">
       <div class="max-w-6xl mx-auto text-center mb-12">
-  <p class="uppercase text-2xl font-semibold text-red-500 mb-2 tracking-widest">SERVICE AREAS</p>
-  <p class="text-gray-600 text-base md:text-lg font-medium mt-4 max-w-2xl mx-auto">
-    We proudly serve a wide range of areas, ensuring that everyone can experience the best in internet connectivity.
-  </p>
-</div>
-          <div class="flex justify-center relative">
-            <img
-              src="/images/logo h2 new.png"
-              alt="Your Image Description"
-              class="max-w-4xl w-full h-auto rounded-lg shadow-lg relative z-10"
-            />
-          </div>
-        </div>
+        <p class="uppercase text-2xl font-semibold text-red-500 mb-2 tracking-widest">SERVICE AREAS</p>
+        <p class="text-gray-600 text-base md:text-lg font-medium mt-4 max-w-2xl mx-auto">
+          We proudly serve a wide range of areas, ensuring that everyone can experience the best in internet connectivity.
+        </p>
       </div>
-    </section>
+      
+      <div class="absolute top-0 left-0 w-32 h-32 bg-[#EE585B]/30 rounded-full blur-xl"></div>
+      <div class="absolute top-0 right-0 w-30 h-30 bg-[#EE585B]/24 rounded-full blur-2xl"></div>
+      <div class="absolute bottom-0 left-0 w-16 h-16 bg-[#EE585B]/25 rounded-full blur-2xl"></div>
+      <div class="absolute bottom-0 right-0 w-20 h-20 bg-[#EE585B]/35 rounded-full blur-xl"></div>
 
-    <section class="px-6 md:px-24 pt-20 pb-20">
-      <div class="max-w-6xl mx-auto">
-        <div class="max-w-6xl mx-auto text-center mb-12">
-  <p class="uppercase text-2xl font-semibold text-red-500 mb-2 tracking-widest">OUR SERVICES</p>
-  <p class="text-gray-600 text-base md:text-lg font-medium mt-4 max-w-2xl mx-auto">
-    Explore our range of services designed to meet your digital needs. From high-speed internet to comprehensive IT solutions, we have you covered.
-  </p>
-</div>
-        <!-- Horizontal Scrollable Cards -->
-        <div class="flex justify-center">
-          <div class="overflow-x-auto pb-4">
-            <div class="flex gap-6 justify-center min-w-max">
-              <!-- Card 1 -->
-              <div
-                class="bg-[#202345] rounded-xl shadow-lg p-6 w-80 flex-shrink-0"
-              >
-                <img
-                  src="/images/pinterest13.jpg"
-                  alt="Service 1"
-                  class="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <h3 class="text-xl font-semibold text-white mb-3">
-                  High-Speed Internet
-                </h3>
-                <p class="text-gray-300 mb-4">
-                  Experience blazing fast internet speeds up to 1GB for seamless
-                  streaming, gaming, and working from home.
-                </p>
-                <button
-                  class="bg-white text-[#202345] px-4 py-2 rounded-lg hover:bg-[#D0E2FF] transition duration-300 hover:scale-105 hover:shadow-1xl"
-                >
-                  View More
-                </button>
-              </div>
-              <!-- Card 2 -->
-              <div
-                class="bg-[#202345] rounded-xl shadow-lg p-6 w-80 flex-shrink-0"
-              >
-                <img
-                  src="/images/pinterest15.jpg"
-                  alt="Service 2"
-                  class="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <h3 class="text-xl font-semibold text-white mb-3">
-                  24/7 Technical Support
-                </h3>
-                <p class="text-gray-300 mb-4">
-                  Round-the-clock technical support to ensure your connection
-                  stays stable and any issues are resolved quickly.
-                </p>
-                <button
-                  class="bg-white text-[#202345] px-4 py-2 rounded-lg hover:bg-[#D0E2FF] transition duration-300 hover:scale-105 hover:shadow-1xl"
-                >
-                  View More
-                </button>
-              </div>
-              <!-- Card 3 -->
-              <div
-                class="bg-[#202345] rounded-xl shadow-lg p-6 w-80 flex-shrink-0"
-              >
-                <img
-                  src="/images/pinterest14.jpg"
-                  alt="Service 3"
-                  class="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <h3 class="text-xl font-semibold text-white mb-3">
-                  Business Solutions
-                </h3>
-                <p class="text-gray-300 mb-4">
-                  Customized internet solutions for businesses with dedicated
-                  bandwidth and priority support for your operations.
-                </p>
-                <button
-                  class="bg-white text-[#202345] px-4 py-2 rounded-lg hover:bg-[#D0E2FF] transition duration-300 hover:scale-105 hover:shadow-1xl"
-                >
-                  View More
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="flex justify-center relative">
+        <img
+          src="/images/grouphome.svg"
+          alt="Your Image Description"
+          class="max-w-4xl w-full h-auto rounded-lg shadow-lg relative z-10"
+        />
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<section id="our-services" class="px-6 md:px-24 pt-10 pb-10" > 
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-6xl mx-auto text-center mb-6"> 
+      <p class="uppercase text-2xl font-semibold text-red-500 mb-2 tracking-widest">OUR SERVICES</p>
+      <p class="text-gray-600 text-base md:text-lg font-medium mt-4 max-w-2xl mx-auto">
+        Explore our range of services designed to meet your digital needs. From high-speed internet to comprehensive IT solutions, we have you covered.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Cards Section -->
+<div class="flex justify-center mt-0 pb-10"> 
+  <div class="overflow-x-auto pb-4">
+    <div class="flex gap-6 justify-center min-w-max">
+      <!-- Card 1 -->
+      <div class="bg-[#202345] rounded-xl shadow-lg p-6 w-[21.5rem] flex-shrink-0 mb-0">
+        <img src="/images/pinterest13.jpg" alt="Service 1" class="w-full h-48 object-cover rounded-lg mb-4" />
+
+        <div class="flex items-center mb-3">
+          <!-- Wifi Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.53 16.11a5 5 0 016.94 0M5.06 12.54a9 9 0 0113.88 0M2.46 8.91a13 13 0 0118.08 0M12 20h.01" />
+          </svg>
+          <h3 class="text-xl font-semibold text-white">Internet Service Provider</h3>
+        </div>
+
+        <p class="text-gray-300 mb-4">
+          High-speed internet tailored for seniors’ daily needs—video calls, streaming, and remote health access.
+        </p>
+        <button class="bg-white text-[#202345] px-4 py-2 rounded-lg hover:bg-[#D0E2FF] transition duration-300 hover:scale-105 hover:shadow-1xl" @click="scrollToPackages">
+          View More
+        </button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-[#202345] rounded-xl shadow-lg p-6 w-[21.5rem] flex-shrink-0 mb-0">
+        <img src="/images/pinterest15.jpg" alt="Service 2" class="w-full h-48 object-cover rounded-lg mb-4" />
+
+        <div class="flex items-center mb-3">
+          <!-- Server Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="16" rx="2" ry="2" />
+            <path d="M3 10h18M9 20v-6M15 20v-6" />
+          </svg>
+          <h3 class="text-xl font-semibold text-white">IT Infrastructure</h3>
+        </div>
+
+        <p class="text-gray-300 mb-4">
+        Robust and scalable digital systems built to support senior care facilities and enhance smart aging environments.
+      </p>
+        <router-link to="/ViewmoreITInfrastructure" class="bg-white text-[#202345] px-4 py-2 rounded-lg hover:bg-[#D0E2FF] transition duration-300 hover:scale-105 hover:shadow-1xl inline-block text-center">
+          View More
+        </router-link>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-[#202345] rounded-xl shadow-lg p-6 w-[21.5rem] flex-shrink-0 mb-0">
+        <img src="/images/pinterest14.jpg" alt="Service 3" class="w-full h-48 object-cover rounded-lg mb-4" />
+
+        <div class="flex items-center mb-3">
+          <!-- Code Brackets Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+          </svg>
+          <h3 class="text-xl font-semibold text-white">Software Development</h3>
+        </div>
+
+        <p class="text-gray-300 mb-4">
+        User-friendly apps and innovative digital tools made to support health, connection, and independence for seniors.
+      </p>
+        <router-link to="/ViewmoreSD" class="bg-white text-[#202345] px-4 py-2 rounded-lg hover:bg-[#D0E2FF] transition duration-300 hover:scale-105 hover:shadow-1xl inline-block text-center">
+        View More
+      </router-link>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
     <!-- Why Choose Us Section -->
     <section class="px-6 md:px-24 pt-20 pb-20 bg-white relative">
@@ -221,11 +144,11 @@
 </div>
         <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
           <!-- Left Image with Pop-up Badges -->
-          <div class="md:col-span-3 flex justify-center relative p-8">
+          <div class="md:col-span-3 flex justify-center relative p-6">
             <img
               src="/images/pinterest11.jpg"
               alt="Why Choose Us"
-              class="w-90 max-w-xl h-auto rounded-2xl shadow-lg"
+              class="w-85 max-w-lg h-auto rounded-2xl shadow-lg"
             />
             <div
               class="absolute top-3 left-3 bg-[#EB0E70] text-white px-3 py-1.5 rounded-full shadow-lg text-sm font-semibold transform -rotate-12 z-10 hover:scale-110 hover:shadow-xl transition-all duration-300 cursor-pointer"
@@ -329,122 +252,8 @@
         </div>
       </div>
     </section>
-  </div>
 
-  <section class="px-6 md:px-24 py-20 bg-[#F1F5FB]">
-  <div class="max-w-6xl mx-auto">
-    <!-- Title and subtitle -->
-    <div class="max-w-6xl mx-auto text-center mb-12">
-  <p class="uppercase text-2xl font-semibold text-red-500 mb-2 tracking-widest">COMMITMENT</p>
-  <p class="text-gray-600 text-base md:text-lg font-medium mt-4 max-w-3xl mx-auto">
-    Discover why customers trust us for superior service and support.
-  </p>
-</div>
-
-    <!-- Two-column layout with image left -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <!-- Left: Image -->
-      <div class="flex justify-center">
-        <img
-          src="/images/image 2.svg"
-          alt="Commitment to Excellence"
-          class="rounded-lg shadow-lg max-w-full h-auto"
-        />
-      </div>
-
-      <!-- Right: Description + Checklist -->
-      <div>
-        <p class="text-gray-700 mb-8">
-          We pride ourselves on delivering outstanding results through dedicated services and expert knowledge.
-        </p>
-
-        <!-- Checklist items -->
-        <ul class="space-y-6">
-          <li class="flex items-start gap-3">
-            <span
-              class="flex-shrink-0 w-6 h-6 bg-[#524BE3] rounded-full flex items-center justify-center mt-1"
-            >
-              <svg
-                class="w-3 h-3 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </span>
-            <p class="text-gray-700">
-              Reliable and consistent high-speed internet connectivity.
-            </p>
-          </li>
-          <li class="flex items-start gap-3">
-            <span
-              class="flex-shrink-0 w-6 h-6 bg-[#524BE3] rounded-full flex items-center justify-center mt-1"
-            >
-              <svg
-                class="w-3 h-3 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </span>
-            <p class="text-gray-700">
-              24/7 dedicated customer and technical support team.
-            </p>
-          </li>
-          <li class="flex items-start gap-3">
-            <span
-              class="flex-shrink-0 w-6 h-6 bg-[#524BE3] rounded-full flex items-center justify-center mt-1"
-            >
-              <svg
-                class="w-3 h-3 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </span>
-            <p class="text-gray-700">
-              Customizable plans tailored to your needs and budget.
-            </p>
-          </li>
-          <li class="flex items-start gap-3">
-            <span
-              class="flex-shrink-0 w-6 h-6 bg-[#524BE3] rounded-full flex items-center justify-center mt-1"
-            >
-              <svg
-                class="w-3 h-3 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </span>
-            <p class="text-gray-700">
-              Seamless installation and quick setup process.
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    
 
  <section class="py-12 bg-[#F1F5FB]">
     <div class="max-w-7xl mx-auto px-6">
@@ -475,8 +284,8 @@
         </div>
       </div>
     </div>
+</section>
 
-  </section>
   <section id="packages" class="px-6 md:px-24 py-20 bg-[#F1F5FB]">
   <div class="max-w-6xl mx-auto text-center mb-12">
     <p class="uppercase text-2xl font-semibold text-red-500 mb-2 tracking-widest">PACKAGES</p>
@@ -485,7 +294,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
     <!-- Card 1 -->
-    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col hover:scale-105 hover:shadow-1xl">
       <div class="mb-4">
         <h3 class="text-xl font-bold text-red-500">Standard</h3>
         <p class="text-gray-600">Home</p>
@@ -498,17 +307,17 @@
         <li>Home Line</li>
         <li>Free tv streaming</li>
         <li>Free Home Protect</li>
-        <li>$80,000 coverage</li>
       </ul>
       <button
-        class="mt-auto bg-red-500 text-white py-3 rounded-full font-semibold hover:bg-red-600 transition"
+        class="mt-auto bg-red-500 text-white py-3 rounded-full font-semibold shadow-inner hover:bg-[#EB0E70] transition duration-300 hover:scale-105 hover:shadow-1xl"
+        @click="redirectToWhatsApp('Standard', 'Rp.235.000', 'Home')"
       >
         Get Started
       </button>
     </div>
 
     <!-- Card 2 -->
-    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col border-4 border-red-500">
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col border-4 border-red-500 hover:scale-105 hover:shadow-1xl">
       <div class="mb-4">
         <h3 class="text-xl font-bold text-red-500">Super</h3>
         <p class="text-gray-600">Office & B2B</p>
@@ -521,17 +330,17 @@
         <li>Home Line</li>
         <li>Free tv streaming</li>
         <li>Free Home Protect</li>
-        <li>$80,000 coverage</li>
       </ul>
       <button
-        class="mt-auto bg-red-500 text-white py-3 rounded-full font-semibold hover:bg-red-600 transition"
+        class="mt-auto bg-red-500 text-white py-3 rounded-full font-semibold shadow-inner hover:bg-[#EB0E70] transition duration-300 hover:scale-105 hover:shadow-1xl"
+        @click="redirectToWhatsApp('Super', 'Rp.250.000', 'Office & B2B')"
       >
         Get Started
       </button>
     </div>
 
     <!-- Card 3 -->
-    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col hover:scale-105 hover:shadow-1xl">
       <div class="mb-4">
         <h3 class="text-xl font-bold text-red-500">Premium</h3>
         <p class="text-gray-600">Enterprise</p>
@@ -544,10 +353,10 @@
         <li>Home Line</li>
         <li>Free tv streaming</li>
         <li>Free Home Protect</li>
-        <li>$80,000 coverage</li>
       </ul>
       <button
-        class="mt-auto bg-red-500 text-white py-3 rounded-full font-semibold hover:bg-red-600 transition"
+        class="mt-auto bg-red-500 text-white py-3 rounded-full font-semibold shadow-inner hover:bg-[#EB0E70] transition duration-300 hover:scale-105 hover:shadow-1xl"
+        @click="redirectToWhatsApp('Premium', 'Rp.400.000', 'Enterprise')"
       >
         Get Started
       </button>
@@ -562,7 +371,7 @@
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    <div class="bg-[#F1F5FB] p-8 rounded-lg shadow-md flex flex-col">
+    <div class="bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-md border border-[#EB0E70]/20 flex flex-col">
       <p class="text-gray-700 italic mb-6">
         "The staff and support are second to none. They are polished, proficient, and patient."
       </p>
@@ -573,13 +382,13 @@
           aria-hidden="true"
         ></span>
         <div>
-          <h3 class="text-lg font-semibold text-[#202345]">Loana Hadid</h3>
+          <h3 class="text-lg font-semibold text-[#202345]">Jeon Jungkook</h3>
           <p class="text-sm text-gray-500">Customer</p>
         </div>
       </div>
     </div>
 
-    <div class="bg-[#F1F5FB] p-8 rounded-lg shadow-md flex flex-col">
+    <div class="bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-md border border-[#EB0E70]/20 flex flex-col">
       <p class="text-gray-700 italic mb-6">
         "Reliable service and quick response times. Highly recommend for anyone needing fast internet."
       </p>
@@ -590,13 +399,13 @@
           aria-hidden="true"
         ></span>
         <div>
-          <h3 class="text-lg font-semibold text-[#202345]">Mark R. Thompson</h3>
+          <h3 class="text-lg font-semibold text-[#202345]">Go Yeonjoong</h3>
           <p class="text-sm text-gray-500">Customer</p>
         </div>
       </div>
     </div>
 
-    <div class="bg-[#F1F5FB] p-8 rounded-lg shadow-md flex flex-col">
+    <div class="bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-md border border-[#EB0E70]/20 flex flex-col">
       <p class="text-gray-700 italic mb-6">
         "Professional and courteous support team that goes above and beyond to solve problems."
       </p>
@@ -607,24 +416,23 @@
           aria-hidden="true"
         ></span>
         <div>
-          <h3 class="text-lg font-semibold text-[#202345]">Sophia Lee</h3>
+          <h3 class="text-lg font-semibold text-[#202345]">Park Jimin</h3>
           <p class="text-sm text-gray-500">Customer</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- Footer -->
-    <FooterSection />
+</DefaultLayout>
 </template>
 
 <script>
-import FooterSection from './FooterSection.vue' // Same folder import
+import DefaultLayout from '@/layouts/DefaultLayout.vue'
 
 export default {
   name: "HomePage",
   components: {
-    FooterSection,
+    DefaultLayout,
   },
   data() {
     return {
@@ -639,7 +447,7 @@ export default {
       ],
     };
   },
- methods: {
+  methods: {
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
     },
@@ -651,10 +459,24 @@ export default {
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
+    },
+    crollToServices() {
+      const section = document.getElementById("our-services");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+      },
+    redirectToWhatsApp(packageName, price, category) {
+      const message = `Hello! I'm interested in the ${packageName} package (${category}) for ${price}. Can you provide more details?`; // Use backticks for string interpolation
+      const phoneNumber = '6285155478411'; 
+      const encodedMessage = encodeURIComponent(message);
+      const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`; 
+      window.open(url, '_blank');
     }
-  }  // No comma here since this is last
-};
+  }
+}
 </script>
+
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
@@ -689,6 +511,6 @@ export default {
   animation-name: marquee;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 20s; /* Adjust speed here */
+  animation-duration: 20s; 
 }
 </style>
